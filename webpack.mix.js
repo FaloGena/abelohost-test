@@ -14,7 +14,6 @@ const mix = require('laravel-mix');
 mix.disableNotifications();
 
 mix.scripts([
-    'resources/js/app.js',
     'resources/js/main.js'
 ], 'public/js/script.js');
 
