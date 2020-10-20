@@ -4,7 +4,8 @@
 namespace App\Traits;
 
 
-use App\Helpers\CarbonHelper;
+use App\Helpers\ChartHelper;
+use App\Helpers\DateHelper;
 use App\Models\User;
 
 trait TaskStats
@@ -25,6 +26,9 @@ trait TaskStats
         $doneTasks = $user->tasks()->whereNotNull('done_at')->get();
         $user->done_tasks = $doneTasks->count();
 
+        // Tasks completed in last 7 days for chart
+        $chartTasks = ChartHelper::getChartLastWeek();
+
         // Time stats
         if ($user->done_tasks > 0) {
             $totalTime = 0;
@@ -36,9 +40,9 @@ trait TaskStats
                 $maxTime = (isset($maxTime)) ? max($completionTime, $maxTime) : $completionTime;
                 $totalTime += $completionTime;
             }
-            $minTime = CarbonHelper::secondsToTime($minTime);
-            $maxTime = CarbonHelper::secondsToTime($maxTime);
-            $avgTime = CarbonHelper::secondsToTime($totalTime / $user->done_tasks);
+            $minTime = DateHelper::secondsToTime($minTime);
+            $maxTime = DateHelper::secondsToTime($maxTime);
+            $avgTime = DateHelper::secondsToTime($totalTime / $user->done_tasks);
         } else { // If there are no completed tasks yet
             $minTime = $maxTime = $avgTime = '-';
         }
@@ -46,6 +50,7 @@ trait TaskStats
         $user->minTime = $minTime;
         $user->maxTime = $maxTime;
         $user->avgTime = $avgTime;
+        $user->chart = $chartTasks;
 
         return $user;
     }

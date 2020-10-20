@@ -72,3 +72,6 @@ main{
     font-size: 21px;
     font-weight: 400;
 }
+.pagination {
+    justify-content: center;
+}

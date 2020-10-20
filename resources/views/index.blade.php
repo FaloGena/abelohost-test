@@ -27,9 +27,9 @@
                 </div>
                 <div class="row mt-4 tasks-list">
                     <div class="container text-center">
-                        <h3>Active tasks</h3>
+                        <h3>All tasks</h3>
                     </div>
-                    @foreach($user->tasks as $task)
+                    @foreach($tasks as $task)
                         <div class="row w-100 my-2 mx-0 rounded bg-main-block shadow task-item">
                             <div class="col-2 task-checkbox my-auto text-center">
                                 @if($task->done_at !== null)
@@ -51,6 +51,9 @@
                             </div>
                         </div>
                     @endforeach
+                    <div class="container">
+                        {{$tasks->links()}}
+                    </div>
                 </div>
             </div>
             <div class="col-md-5 offset-md-1 stats">
