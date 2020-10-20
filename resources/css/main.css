@@ -33,6 +33,9 @@ main{
 .bg-github{
     background-color: #24292e;
 }
+.bg-main-block{
+    background-color: #dfdfdf91;
+}
 .not-logged-main{
     margin: 10% auto 15%;
 }
@@ -46,4 +49,23 @@ main{
 }
 .need-login span a{
     color: #ff00a5;
+}
+.task-checkbox button{
+    height: 30px;
+    width: 30px;
+}
+.task-date span{
+    opacity: .6;
+    font-size: 13px;
+}
+.stats .count, .stats .time{
+    height: 180px;
+}
+.stats .count-amount{
+    font-size: 30px;
+    font-weight: 700;
+}
+.stats .count-description{
+    font-size: 21px;
+    font-weight: 400;
 }
