@@ -8,7 +8,7 @@
     <title>Exchequer</title>
     @include('layouts.resource-loading.css')
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 @include('layouts.header')
 <main role="main" class="container">
         @yield('content')

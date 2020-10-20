@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer mt-auto">
     <div class="dark-line"></div>
     <div class="container">
         <div class="row text-center">
