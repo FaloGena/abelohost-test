@@ -20,6 +20,9 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                    <a href="/login/github" class="btn btn-lg btn-secondary bg-github btn-block" >
+                        <i class="fa fa-github"></i> Use GitHub account
+                    </a>
                 </div>
             </form>
         </div>

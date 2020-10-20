@@ -1,5 +1,9 @@
 @extends('layouts.main')
 @section('content')
+    <a href="/login/github" class="btn btn-lg btn-secondary btn-block bg-github" >
+        <i class="fa fa-github"></i> Use GitHub account
+    </a>
+    <h5 class="text-center m-auto">or fill</h5>
     <h3 class="register-heading text-center">Registration form</h3>
     <h5 class="register-descr text-center mb-4">You should sign up to use this service.</h5>
     <form action="javascript:void(null);" method="POST" class="col-12 registration-form">

@@ -20,6 +20,8 @@ Route::group(['middleware' => ['guest']], function () {
     Route::get('register', [\App\Http\Controllers\Auth\RegistrationController::class, 'index'])->name('register');
     Route::post('register', [\App\Http\Controllers\Auth\RegistrationController::class, 'create']);
     Route::post('login', [\App\Http\Controllers\Auth\LoginController::class, 'authenticate']);
+    Route::get('login/{provider}', [\App\Http\Controllers\Auth\SocialController::class, 'redirectToProvider']);
+    Route::get('login/{provider}/callback', [\App\Http\Controllers\Auth\SocialController::class, 'handleProviderCallback']);
 });
 
 Route::group(['middleware' => ['auth']], function () {
