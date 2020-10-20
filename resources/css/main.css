@@ -1,18 +1,77 @@
-html,
+html{
+    min-height: 100%;
+}
 body{
     height: 100%;
-}
-body{
     padding-top: 4.5rem;
 }
+main{
+    padding-bottom: 60px;
+}
 .footer{
-    position: absolute;
-    bottom: 0;
+    /*position: absolute;*/
+    /*bottom: 0;*/
     width: 100%;
     height: 60px;
     line-height: 60px;
-    background-color: #f5f5f5;
+}
+.footer .dark-line{
+    height: 1px;
+    width: 100%;
+    background-image: linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
+    background-image: -o-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
+    background-image: -moz-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
+    background-image: -webkit-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
+    background-image: -ms-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
+    background-image: -webkit-gradient( linear, left bottom, right bottom, color-stop(0.02, white), color-stop(0.5, gray), color-stop(0.98, white) );
+    margin: auto;
+}
+.footer .row a{
+    color: grey;
+    font-size: 18px;
 }
 .bg-github{
     background-color: #24292e;
+}
+.bg-main-block{
+    background-color: #dfdfdf91;
+}
+.not-logged-main{
+    margin: 10% auto 15%;
+}
+.big-name span{
+    font-size: 70px;
+    font-weight: 400;
+    opacity: .5;
+}
+.need-login span{
+    font-size: 21px;
+}
+.need-login span a{
+    color: #ff00a5;
+}
+.task-checkbox button{
+    height: 30px;
+    width: 30px;
+}
+.task-checkbox button.checked{
+    background-color: greenyellow;
+}
+.task-date span{
+    opacity: .6;
+    font-size: 13px;
+}
+.stats .count, .stats .time{
+    min-height: 180px;
+}
+.stats .count-amount{
+    font-size: 30px;
+    font-weight: 700;
+}
+.stats .count-description{
+    font-size: 21px;
+    font-weight: 400;
+}
+.pagination {
+    justify-content: center;
 }

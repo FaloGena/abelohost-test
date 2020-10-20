@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="/">Exchequer</a>
+    <a class="navbar-brand" href="/">TaskWatch</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -16,11 +16,13 @@
                 <a class="nav-link disabled" href="#">Disabled</a>
             </li>
         </ul>
+        <span class="navbar-text"></span>
         {{--            <form class="form-inline mt-2 mt-md-0">--}}
         {{--                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">--}}
         {{--                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>--}}
         {{--            </form>--}}
         @guest
+
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a type="button" class="nav-link text-white font-weight-bold" data-toggle="modal" data-target="#loginModal">Sign

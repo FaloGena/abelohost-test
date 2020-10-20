@@ -1,5 +1,16 @@
-<footer class="footer">
+<footer class="footer mt-auto">
+    <div class="dark-line"></div>
     <div class="container">
-        <span class="text-muted">Place sticky footer content here.</span>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <a href="https://vk.com/id66604247">VK</a>
+            </div>
+            <div class="col-md-4">
+                <a href="https://github.com/FaloGena">GitHub</a>
+            </div>
+            <div class="col-md-4">
+                <a href="mailto:strafetheweb@gmail.com">strafetheweb@gmail.com</a>
+            </div>
+        </div>
     </div>
 </footer>

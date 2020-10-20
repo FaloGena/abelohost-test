@@ -52,4 +52,11 @@ $(document).ready(function () {
         let formData = $(this).serialize();
         sendAjax('/login', formData, loginHandler);
     });
+
+    // Task completion checkbox
+    $('.task-checkbox button.unchecked').on('click', function () {
+        let data = {'done': true};
+        let taskId = $(this).data('id');
+        sendAjax('/tasks/' + taskId + '/done', data, stayHandler);
+    });
 });
