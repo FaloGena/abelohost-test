@@ -51,4 +51,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\SocialAccount');
     }
+
+    public function tasks()
+    {
+        return $this->hasMany('App\Models\Task')->orderByRaw('-done_at ASC');
+    }
 }

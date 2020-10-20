@@ -26,4 +26,7 @@ Route::group(['middleware' => ['guest']], function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::post('logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+    Route::post('tasks', [\App\Http\Controllers\TaskController::class, 'create']);
+    Route::post('tasks/{task}', [\App\Http\Controllers\TaskController::class, 'update']);
+    Route::post('tasks/{task}/done', [\App\Http\Controllers\TaskController::class, 'done']);
 });

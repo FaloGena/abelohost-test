@@ -54,12 +54,15 @@ main{
     height: 30px;
     width: 30px;
 }
+.task-checkbox button.checked{
+    background-color: greenyellow;
+}
 .task-date span{
     opacity: .6;
     font-size: 13px;
 }
 .stats .count, .stats .time{
-    height: 180px;
+    min-height: 180px;
 }
 .stats .count-amount{
     font-size: 30px;
