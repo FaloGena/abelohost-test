@@ -38,7 +38,7 @@
                                     <button data-id="{{$task->id}}" class="rounded unchecked"></button>
                                 @endif
                             </div>
-                            <div class="col-10 pl-0 py-2 task-body">
+                            <div class="col-10 pl-0 py-2 task-body" data-id="{{$task->id}}">
                                 <div class="col-12 pt-2 task-name">
                                     <h5>{{$task->name}}</h5>
                                 </div>
@@ -87,5 +87,7 @@
 @endsection
 
 @section('after-scripts')
-    @include("layouts.main.task-chart")
+    @auth
+        @include("layouts.main.task-chart")
+    @endauth
 @endsection

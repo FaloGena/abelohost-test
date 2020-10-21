@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['guest']], function () {
     // Authorisation routes
@@ -27,6 +27,13 @@ Route::group(['middleware' => ['guest']], function () {
 Route::group(['middleware' => ['auth']], function () {
     Route::post('logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
     Route::post('tasks', [\App\Http\Controllers\TaskController::class, 'create']);
-    Route::post('tasks/{task}', [\App\Http\Controllers\TaskController::class, 'update']);
-    Route::post('tasks/{task}/done', [\App\Http\Controllers\TaskController::class, 'done']);
+
+    Route::get('tasks/{task}', [\App\Http\Controllers\TaskController::class, 'show'])
+        ->middleware('can:show,task');
+
+    Route::post('tasks/{task}', [\App\Http\Controllers\TaskController::class, 'update'])
+        ->middleware('can:update,task');
+
+    Route::post('tasks/{task}/done', [\App\Http\Controllers\TaskController::class, 'done'])
+        ->middleware('can:update,task');
 });

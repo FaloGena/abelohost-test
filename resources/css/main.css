@@ -50,6 +50,9 @@ main{
 .need-login span a{
     color: #ff00a5;
 }
+.task-item .task-body{
+    cursor: pointer;
+}
 .task-checkbox button{
     height: 30px;
     width: 30px;

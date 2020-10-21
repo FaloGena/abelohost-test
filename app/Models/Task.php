@@ -35,6 +35,9 @@ class Task extends Model
 
     public function setDone()
     {
+        if ($this->done_at !== null) // if already marked as completed
+            return $this->done_at;
+
         $now = now();
         $this->done_at = $now;
         $this->save();
@@ -44,7 +47,9 @@ class Task extends Model
 
     public function unsetDone()
     {
-        $this->done_at = null;
-        $this->save();
+        if ($this->done_at !== null) {// not necessary IF but potentially saves performance
+            $this->done_at = null;
+            $this->save();
+        }
     }
 }

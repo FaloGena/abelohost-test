@@ -6,23 +6,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
         </ul>
         <span class="navbar-text"></span>
-        {{--            <form class="form-inline mt-2 mt-md-0">--}}
-        {{--                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">--}}
-        {{--                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>--}}
-        {{--            </form>--}}
         @guest
-
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a type="button" class="nav-link text-white font-weight-bold" data-toggle="modal" data-target="#loginModal">Sign
