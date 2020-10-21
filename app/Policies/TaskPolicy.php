@@ -35,4 +35,10 @@ class TaskPolicy
             : Response::deny('You do not own this task.');
     }
 
+    public function delete(User $user, Task $task)
+    {
+        return $user->id === $task->user_id
+            ? Response::allow()
+            : Response::deny('You do not own this task.');
+    }
 }

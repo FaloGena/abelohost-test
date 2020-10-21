@@ -31,9 +31,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('tasks/{task}', [\App\Http\Controllers\TaskController::class, 'show'])
         ->middleware('can:show,task');
 
-    Route::post('tasks/{task}', [\App\Http\Controllers\TaskController::class, 'update'])
+    Route::put('tasks/{task}', [\App\Http\Controllers\TaskController::class, 'update'])
         ->middleware('can:update,task');
 
     Route::post('tasks/{task}/done', [\App\Http\Controllers\TaskController::class, 'done'])
         ->middleware('can:update,task');
+
+    Route::delete('tasks/{task}', [\App\Http\Controllers\TaskController::class, 'delete'])
+        ->middleware('can:delete,task');
 });

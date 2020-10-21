@@ -27,7 +27,7 @@
                 </div>
                 <div class="row mt-4 tasks-list">
                     <div class="container text-center">
-                        <h3>All tasks</h3>
+                        <h3>{{(!count($tasks)) ? 'You have no tasks yet' : 'All tasks'}}</h3>
                     </div>
                     @foreach($tasks as $task)
                         <div class="row w-100 my-2 mx-0 rounded bg-main-block shadow task-item">
