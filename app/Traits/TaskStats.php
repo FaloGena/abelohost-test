@@ -27,7 +27,7 @@ trait TaskStats
         $user->done_tasks = $doneTasks->count();
 
         // Tasks completed in last 7 days for chart
-        $chartTasks = ChartHelper::getChartLastWeek();
+        $chartTasks = $user->getChartLastWeek();
 
         // Time stats
         if ($user->done_tasks > 0) {

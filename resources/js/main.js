@@ -59,4 +59,9 @@ $(document).ready(function () {
         let taskId = $(this).data('id');
         sendAjax('/tasks/' + taskId + '/done', data, stayHandler);
     });
+
+    // Links for tasks on task list
+    $('.task-item .task-body').on('click', function () {
+        location.href = '/tasks/' + $(this).data('id');
+    });
 });

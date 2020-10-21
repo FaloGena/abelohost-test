@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    public function index()
+    public function show(Task $task)
     {
-
+        return view('task')->with(['task' => $task]);
     }
 
     public function create(TaskRequest $request)
@@ -22,15 +22,22 @@ class TaskController extends Controller
         return redirect()->back();
     }
 
-    public function update(TaskRequest $request, $task)
+    public function update(TaskRequest $request, Task $task)
     {
+        $data = $request->only('name', 'description');
+        $task->update($data);
 
+        // Completeness checkbox
+        $done = $request->only('done');
+        if ($done) $task->setDone();
+        else $task->unsetDone();
+
+        return redirect()->route('home');
     }
 
-    public function done(Request $request, $task)
+    public function done(Request $request, Task $task)
     {
         $done = $request->only('done');
-        $task = Task::findOrFail($task);
         if ($done) $task->setDone();
         else $task->unsetDone();
     }
