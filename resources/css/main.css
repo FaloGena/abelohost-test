@@ -59,6 +59,7 @@ main{
 }
 .task-checkbox button.checked{
     background-color: greenyellow;
+    cursor: default;
 }
 .task-date span{
     opacity: .6;
