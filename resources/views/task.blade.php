@@ -7,6 +7,7 @@
     </div>
     <form action="/tasks/{{$task->id}}" method="POST" class="col-12 task-edit-form">
         {{csrf_field()}}
+        {{ method_field('PUT') }}
         <div class="row">
             <div class="form-group col-12">
                 <label for="taskName-input">Task name</label>
@@ -34,5 +35,10 @@
                 <button type="submit" class="btn btn-secondary btn-lg float-right">Submit</button>
             </div>
         </div>
+    </form>
+    <form action="/tasks/{{$task->id}}" method="POST" class="col-12 mt-4 task-delete-form">
+        {{csrf_field()}}
+        {{ method_field('DELETE') }}
+        <button type="submit" class="btn btn-danger btn-lg float-right">Delete task</button>
     </form>
 @endsection

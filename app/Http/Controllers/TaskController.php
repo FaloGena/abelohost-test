@@ -41,4 +41,15 @@ class TaskController extends Controller
         if ($done) $task->setDone();
         else $task->unsetDone();
     }
+
+    public function delete(Request $request, Task $task)
+    {
+        try {
+            $task->delete();
+        } catch (\Exception $e) {
+            //
+        }
+
+        return redirect()->route('home');
+    }
 }
